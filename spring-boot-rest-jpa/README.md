@@ -21,7 +21,7 @@ This is a basic Spring Boot application that provides REST endpoints to manage u
 Create a MySQL database and user:
 ```sql
 CREATE DATABASE testdb;
-CREATE USER 'summarydb'@'localhost' IDENTIFIED BY 'Docker#Root99';
+CREATE USER 'summary'@'localhost' IDENTIFIED BY '123456789';
 GRANT ALL PRIVILEGES ON testdb.* TO 'summarydb'@'localhost';
 FLUSH PRIVILEGES;
 ```
@@ -29,9 +29,9 @@ FLUSH PRIVILEGES;
 ### 2. Configure Database Connection
 Edit `src/main/resources/application.properties` if needed:
 ```properties
-spring.datasource.url=jdbc:mysql://127.0.0.1:33061/testdb
-spring.datasource.username=summarydb
-spring.datasource.password=Docker#Root99
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/testdb
+spring.datasource.username=summary
+spring.datasource.password=123456789
 ```
 
 ### 3. Run the Application
@@ -51,8 +51,8 @@ The application will start at: **http://localhost:8099**
 |--------|----------------|-------------------|---------------------------------------------------|
 | GET    | /users         | Get all users     | -                                                 |
 | GET    | /users/{id}    | Get user by ID    | -                                                 |
-| POST   | /users         | Create new user   | `{"username":"john","email":"john@example.com"}` |
-| PUT    | /users/{id}    | Update user       | `{"username":"john","email":"john@example.com"}` |
+| POST   | /users         | Create new user   | `{"username":"ahmad","email":"ahmad@example.com"}` |
+| PUT    | /users/{id}    | Update user       | `{"username":"ahmad","email":"ahmad@example.com"}` |
 | DELETE | /users/{id}    | Delete user       | -                                                 |
 
 ### Example Usage
@@ -61,7 +61,7 @@ The application will start at: **http://localhost:8099**
 ```bash
 curl -X POST http://localhost:8099/users \
   -H "Content-Type: application/json" \
-  -d '{"username":"john_doe","email":"john@example.com"}'
+  -d '{"username":"ahmad","email":"ahmad@example.com"}'
 ```
 
 **Get all users:**
