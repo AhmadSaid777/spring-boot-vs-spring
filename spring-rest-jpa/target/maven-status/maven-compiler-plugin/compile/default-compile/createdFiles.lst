@@ -1,0 +1,6 @@
+com\example\rest\repository\UserRepository.class
+com\example\rest\service\UserServiceImpl.class
+com\example\rest\service\UserService.class
+com\example\rest\config\AppConfig.class
+com\example\rest\controller\UserController.class
+com\example\rest\model\User.class
